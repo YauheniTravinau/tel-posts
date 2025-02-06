@@ -19,11 +19,14 @@ document.getElementById("messageForm").addEventListener("submit", async function
     const warehouse = document.getElementById("warehouse").value;
     const customWarehouse = document.getElementById("customWarehouse").value;
     const productLink = document.getElementById("productLink").value;
+    const recipient = document.getElementById("recipient").value;
+    const customRecipient = document.getElementById("customRecipient").value;
     const photosInput = document.getElementById("photos");
     const photos = photosInput ? photosInput.files : [];
 
     const finalWarning = warning === "Другое" ? "⚠️ <b>Внимание:</b> " + customWarning : warning.replace("⚠️ Внимание:", "⚠️ <b>Внимание:</b>");
     const finalWarehouse = warehouse === "Другое" ? customWarehouse : warehouse;
+    const finalRecipient = recipient === "Другое" ? customRecipient : recipient;
 
     let message = `
 ${finalWarning}
@@ -59,7 +62,7 @@ ${finalWarning}
         message += `<b>🔗 <a href="${productLink}" target="_blank">Ссылка на товар</a></b>\n`;
     }
 
-    message += `<b>💬 Предлагайте свои цены на перевозку в личные сообщения:</b> @TORGGB
+    message += `<b>💬 Предлагайте свои цены на перевозку в личные сообщения:</b> ${finalRecipient}
 
 <b>${status === "🟢 Перевозчик найден" ? "🟢🟢🟢 Перевозчик найден 🟢🟢🟢" : "🚛 Ищем перевозчика"}</b> 
 `;
@@ -144,6 +147,10 @@ document.getElementById("warehouse").addEventListener("change", function() {
     toggleCustomField("warehouse", "customWarehouse");
 });
 
+document.getElementById("recipient").addEventListener("change", function() {
+    toggleCustomField("recipient", "customRecipient");
+});
+
 // Функция для скрытия/показа поля ввода "Другое"
 function toggleCustomField(selectId, customFieldId) {
     const selectElement = document.getElementById(selectId);
@@ -159,4 +166,5 @@ function resetForm() {
     // Скрытие полей "Другое" после сброса
     document.getElementById("customWarning").style.display = "none";
     document.getElementById("customWarehouse").style.display = "none";
+    document.getElementById("customRecipient").style.display = "none";
 }
