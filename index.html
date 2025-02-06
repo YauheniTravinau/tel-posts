@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Message Sender</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+<div class="container">
+    <h2>Telegram Message Sender</h2>
+    <form id="messageForm">
+        <label for="warning">Предупреждение:</label>
+        <select id="warning">
+            <option value="⚠️ Внимание: Товар может быть под санкциями. Все риски, связанные с его повреждением, утерей, конфискацией или разворотом машины, несет Водитель.">
+                Готовое предупреждение
+            </option>
+            <option value="Другое">Другое</option>
+        </select>
+        <label for="customWarning"></label><input type="text" id="customWarning" placeholder="Введите собственное предупреждение" style="display: none;"/>
+
+        <label for="status">Статус:</label>
+        <select id="status">
+            <option value="🚛 Ищем перевозчика">🚛 Ищем перевозчика</option>
+            <option value="🟢 Перевозчик найден">🟢 Перевозчик найден</option>
+            <option value="❌ Клиент отказался">❌ Клиент отказался</option>
+        </select>
+
+        <label for="productTitle">Название:</label>
+        <input type="text" id="productTitle" placeholder="Введите название раздатки" value=""/>
+
+        <label for="productDescription">описание:</label>
+        <input type="text" id="productDescription" placeholder="Введите короткое описание товара" value=""/>
+
+        <label for="price">Цена товара:</label>
+        <input type="text" id="price" placeholder="Введите цену товара" value=""/>
+
+        <label for="weight">Вес груза:</label>
+        <input type="text" id="weight" placeholder="Введите вес груза" value=""/>
+
+        <label for="purchaseStatus">Статус покупки:</label>
+        <select id="purchaseStatus">
+            <option value="🕑 Ожидается покупка товара">🕑 Ожидается покупка товара</option>
+            <option value="✅ Товар выкуплен">✅ Товар выкуплен</option>
+        </select>
+
+        <label for="warehouse">Склад:</label>
+        <select id="warehouse">
+            <option value="Белосток">📍 Белосток</option>
+            <option value="Тересполь">📍 Тересполь</option>
+            <option value="Заказ на склад перевозчика, либо наши склады Беласток, Тересполь">📍 Заказ на склад перевозчика, либо наши склады Беласток, Тересполь</option>
+            <option value="Другое">Другое</option>
+        </select>
+        <label for="customWarehouse"></label><input type="text" id="customWarehouse" placeholder="Введите название склада" style="display: none;"/>
+
+        <label for="productLink">Ссылка на товар (необязательно):</label>
+        <input type="url" id="productLink" placeholder="Введите ссылку на товар" />
+
+        <label for="photos">Загрузите фото (1 штука):</label>
+        <input type="file" id="photos" name="photos" multiple accept="image/*">
+
+        <button type="submit">Отправить сообщение</button>
+    </form>
+</div>
+
+<script src="global.js"></script>
+</body>
+</html>
