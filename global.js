@@ -22,7 +22,7 @@ document.getElementById("messageForm").addEventListener("submit", async function
     const recipient = document.getElementById("recipient").value;
     const customRecipient = document.getElementById("customRecipient").value;
     const photosInput = document.getElementById("photos");
-    const photos = photosInput ? photosInput.files : [];
+    const photos = photosInput.files ? photosInput.files : [];
 
     const finalWarning = warning === "Другое" ? "⚠️ <b>Внимание:</b> " + customWarning : warning.replace("⚠️ Внимание:", "⚠️ <b>Внимание:</b>");
     const finalWarehouse = warehouse === "Другое" ? customWarehouse : warehouse;
@@ -112,6 +112,21 @@ ${finalWarning}
     }
 });
 
+// Обработчик события для вставки изображений через Ctrl + V
+document.getElementById("messageForm").addEventListener("paste", function(e) {
+    const items = e.clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf("image") !== -1) {
+            const file = items[i].getAsFile();
+            const photosInput = document.getElementById("photos");
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            photosInput.files = dataTransfer.files; // Обновляем список файлов
+            break;
+        }
+    }
+});
+
 // Функция отображения сообщения об отправке
 function showMessage() {
     let msgBox = document.getElementById("messageSent");
@@ -131,7 +146,6 @@ function showMessage() {
         msgBox.remove();
     }, 5000);
 }
-
 
 // Генерация Лот №
 function generateLotNumber() {
