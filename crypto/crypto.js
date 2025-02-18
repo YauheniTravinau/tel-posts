@@ -38,14 +38,14 @@ ${tags ? `${tags}` : ""}
 ${projectDescription ? `<b>💭</b> ${projectDescription}` : ""}
 ${personalOpinion ? `<b>🔥</b> ${personalOpinion}` : ""}
 
-${cryptoName && cryptoLink ? `<b>💎</b> <a href="${cryptoLink}" target="_blank">${cryptoName}</a>` : ""}
+${cryptoName && cryptoLink ? `<b>💎</b> <b><a href="${cryptoLink}" target="_blank">${cryptoName}</a></b>` : ""}
 ${marketCap ? `<b>💰 MCap:</b> ${marketCap}` : ""}
 ${growthPrediction ? `<b>🔹</b> ${growthPrediction}` : ""}
 
 ${profitStandard || ""}
 ${profitCustom ? `<b>✅</b> ${profitCustom}` : "✅ х... - Ваш выбор - Ваша прибыль!"}
 
-${exchanges || ""}
+${exchanges ? `<b>${exchanges}</b>` : ""}
 
 🌐 <a href="https://toaric.com/" target="_blank">TOARIC.COM</a>
 
