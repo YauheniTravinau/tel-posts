@@ -33,9 +33,10 @@ document.getElementById("messageForm").addEventListener("submit", async function
     const message = ` 
 ${warning !== "Другое" ? `⚠️ <b>Внимание:</b> ${warning.replace("⚠️ Внимание:", "").trim()}` : "⚠️ <b>" + customWarning + "</b>"}
 
+${tags ? `${tags}` : ""}
+
 ${projectDescription ? `<b>💭</b> ${projectDescription}` : ""}
 ${personalOpinion ? `<b>🔥</b> ${personalOpinion}` : ""}
-${tags ? `${tags}` : ""}
 
 ${cryptoName && cryptoLink ? `<b>💎</b> <a href="${cryptoLink}" target="_blank">${cryptoName}</a>` : ""}
 ${marketCap ? `<b>💰 MCap:</b> ${marketCap}` : ""}
