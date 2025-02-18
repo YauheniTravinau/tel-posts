@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Message Sender</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="menu-container"></div>
+    <h2>Telegram Message Sender</h2>
+
+    <form id="messageForm">
+        <!-- Предупреждение -->
+        <label for="warning">⚠️ Предупреждение:</label>
+        <select id="warning">
+            <option value="Инвестиции связаны с рисками! Вы можете потерять часть или весь вложенный капитал.">
+                Готовое предупреждение
+            </option>
+            <option value="Другое">Другое</option>
+        </select>
+        <label for="customWarning"></label><input type="text" id="customWarning" placeholder="Введите собственное предупреждение" style="display: none;"/>
+
+        <!-- Описание проекта -->
+        <label for="projectDescription">💭 Описание проекта:</label>
+        <textarea id="projectDescription" placeholder="Введите описание" rows="3"></textarea>
+
+        <!-- Личное мнение -->
+        <label for="personalOpinion">🔥 Личное мнение:</label>
+        <textarea id="personalOpinion" placeholder="Введите личное мнение" rows="3"></textarea>
+
+        <!-- Монета -->
+        <label for="cryptoName">💎 Монета:</label>
+        <input type="text" id="cryptoName" placeholder="Название монеты (например, $INSP)" />
+        <label for="cryptoLink"></label><input type="url" id="cryptoLink" placeholder="Ссылка на монету" />
+
+        <!-- Маркет кап -->
+        <label for="marketCap">💰 Маркет кап:</label>
+        <input type="text" id="marketCap" placeholder="Введите маркет кап" />
+
+        <!-- Доходность -->
+        <label>✅ Доходность:</label>
+        <label for="profitStandard"></label><input type="text" id="profitStandard" value="✅ x2 - 50%" disabled />
+        <label for="profitCustom"></label><input type="text" id="profitCustom" placeholder="Введите доходность" />
+
+        <!-- Предположение роста -->
+        <label for="growthPrediction">🔹 Предположение роста:</label>
+        <input type="text" id="growthPrediction" placeholder="Введите предположение роста" />
+
+        <!-- Теги -->
+        <label for="tags">🏷️ Теги:</label>
+        <input type="text" id="tags" placeholder="Введите до 5 тегов через запятую (например, tlos, bnb, csc)" />
+
+        <label>📈 Биржи:</label>
+        <div class="exchanges">
+            <label><input type="checkbox" value="▫️ BYBIT" data-link="https://www.bybit.com/invite?ref=RJDW50" /> BYBIT</label>
+            <label><input type="checkbox" value="▫️ BingX" data-link="https://bingx.com/invite/Q3LUUH" /> BingX</label>
+            <label><input type="checkbox" value="▫️ KuCoin" data-link="https://www.kucoin.com/ucenter/signup?rcode=QBSCE5AF&utm_source=rf" /> KuCoin</label>
+            <label><input type="checkbox" value="▫️ Gate.io" data-link="https://www.gate.io/signup/XgRMBg1d?ref_type=103" /> Gate.io</label>
+            <label><input type="checkbox" value="▫️ MEXC" data-link="https://www.mexc.com/invite/register?inviteCode=128ndh&utm_source=usershare&utm_medium=usershare&utm_biz=affiliate&utm_campaign=invite" /> MEXC</label>
+            <label><input type="checkbox" value="▫️ HTX" data-link="https://www.htx.com/invite/en-us/1f?invite_code=53ck7223" /> HTX</label>
+            <label><input type="checkbox" value="▫️ BitMart" data-link="https://www.bitmart.cool/invite/VE6EmT/en-US" /> BitMart</label>
+            <label><input type="checkbox" value="▫️ AscendEX" data-link="https://ascendex.com/en/register?inviteCode=UAJA9CR4M" /> AscendEX</label>
+            <label><input type="checkbox" value="▫️ CoinW" data-link="https://www.coinw.com/front/invitePublicity?r=2600626&language=ru_RU" /> CoinW</label>
+            <label><input type="checkbox" value="▫️ Bitrue" data-link="https://www.bitrue.com/affiliate/landing?cn=600000&inviteCode=EWZTWTT" /> Bitrue</label>
+            <label><input type="checkbox" value="▫️ XT" data-link="https://www.xt.com/en/accounts/register?ref=GQT9O9OZC3" /> XT</label>
+            <label><input type="checkbox" value="▫️ OKX" data-link="https://www.okx.com/join/52991118" /> OKX</label>
+            <label><input type="checkbox" value="▫️ Bitget" data-link="https://www.bitget.com/referral/register?clacCode=E25EQW0N&from=%2Fru%2Fevents%2Freferral&source=events" /> Bitget</label>
+            <label><input type="checkbox" value="▫️ Binance" data-link="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_0034FS4Z8U" /> Binance</label>
+        </div>
+
+        <!-- Фотография -->
+        <label for="photos">📷 Фотография:</label>
+        <input type="file" id="photos" accept="image/*" multiple />
+
+        <!-- Завершение -->
+        <p>🌐 <span id="toaricLink">TOARIC.COM</span></p>
+        <p>🍀 Удачи.</p>
+
+        <button type="submit">Отправить сообщение</button>
+
+    </form>
+</div>
+
+<script src="/crypto/crypto.js"></script>
+<script src="/gl2.js"></script>
+</body>
+</html>
