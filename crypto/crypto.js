@@ -47,9 +47,8 @@ ${profitCustom ? `<b>✅</b> ${profitCustom}` : "✅ х... - Ваш выбор -
 
 ${exchanges ? `<b>${exchanges}</b>` : ""}
 
-🌐 <a href="https://toaric.com/" target="_blank">TOARIC.COM</a>
-
-🍀 Удачи.
+🌐 <b><a href="https://toaric.com/" target="_blank">TOARIC.COM</a></b>
+<b>🍀 Удачи.</b>
 `.replace(/\n{2,}/g, '\n\n').trim();
 
     const token = "6474294962:AAEsSW6tuiENb4nal8porTs4Ts97YJFKiSQ";
